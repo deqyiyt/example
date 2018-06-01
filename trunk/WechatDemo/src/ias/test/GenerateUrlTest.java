@@ -14,7 +14,7 @@ public class GenerateUrlTest {
 	@Test
 	public void generateUrlTest() {
 		//需要接受重定向的URL
-		String callbackUrl = "https://wechat.fuyitianjian.net/demo/scan";
+		String callbackUrl = "https://wechat.fuyitianjian.cn/sec/";
 		
 		//需要透传给云医管的数据，预留
 		String params = "{}";
@@ -38,6 +38,7 @@ public class GenerateUrlTest {
 	 */
 	@Test
 	public void decryptTest() {
+		//https://wechat.fuyitianjian.cn/sec/?encrypt=7dHVBwNkKt/6icmRHEATSSlGJBVAm9MgJldL7uEbrizHA/u0W0ZHBuF1RWmqMIW9ixbDwevdJKW0giqV+Kkk+kIG9gE3MGkzEi51GL9ZHJ+VXJHPvstCQhE8o4wVyKw6I0vjJxGbMots4AEDUPlV5FzmiF4CTzPpATReRrSQsXCwqU1b4OUmBva1k4HyBT3cyFHRe6kGATlFJ+tmigTASd943762pHFY3a+HxpMhUBzSPS1b1aOl3YVqLskXgc8aPWkGWz/RwK5tBwefvG45F+Od+iFnTUJU4k171jpAKD8qNnCMCl17Hdl4U6DDeJpM2XeiIffnL/OXswCZnjN3ZPDJTSTffC7j9SuchWHDBbQ7TEiDFnJmrGyX3GbBO+wv/yRK4aZ2BiD+b+oqnRyYo9XzZrC5GwrMBOXpt25DIWY58l9RQx3e5wxTMLsxndOng/RyDPSHzkcc1zFV+sn/I7jY1sMVYIFFj8+TkDeDIeRnV7fMCHMCKcBbkJAXbr5lzZ1QdALdMqqK8aeWOMTmZeDB9/ReBBtzFt07P9PKfZhGNTT3vGzGFKvqy7oauIXnrqEGi6whYo2SqXuTfie9NHGZJB9iqhw+JUAxixzsvk+3OioNZaijlGZCx6pAz/5wQZuvW9SDLjQWbEmEQxBsb65JVu6HO/NUZDFH9M/Bcbd1wdZ3i2VZe2kMwCbsPwNVRmYOBAJ4tY6B3YOLioyFKQAQDrLZ2+5FdGObUX6VSWGMgw+lDAp3PA1haS97hyBZ
 		String decrypt = "7dHVBwNkKt/6icmRHEATSSlGJBVAm9MgJldL7uEbrizHA/u0W0ZHBuF1RWmqMIW9ixbDwevdJKW0giqV+Kkk+kIG9gE3MGkzEi51GL9ZHJ+VXJHPvstCQhE8o4wVyKw6I0vjJxGbMots4AEDUPlV5FzmiF4CTzPpATReRrSQsXCwqU1b4OUmBva1k4HyBT3cyFHRe6kGATlFJ+tmigTASd943762pHFY3a+HxpMhUBzSPS1b1aOl3YVqLskXgc8aPWkGWz/RwK5tBwefvG45F+Od+iFnTUJU4k171jpAKD8qNnCMCl17Hdl4U6DDeJpM2XeiIffnL/OXswCZnjN3ZPDJTSTffC7j9SuchWHDBbQ7TEiDFnJmrGyX3GbBO+wv/yRK4aZ2BiD+b+oqnRyYo9XzZrC5GwrMBOXpt25DIWY58l9RQx3e5wxTMLsxndOng/RyDPSHzkcc1zFV+sn/I7jY1sMVYIFFj8+TkDeDIeRnV7fMCHMCKcBbkJAXbr5lzZ1QdALdMqqK8aeWOMTmZeDB9/ReBBtzFt07P9PKfZhGNTT3vGzGFKvqy7oauIXnrqEGi6whYo2SqXuTfie9NHGZJB9iqhw+JUAxixzsvk+3OioNZaijlGZCx6pAz/5wQZuvW9SDLjQWbEmEQxBsb65JVu6HO/NUZDFH9M/Bcbd1wdZ3i2VZe2kMwCbsPwNVRmYOBAJ4tY6B3YOLioyFKQAQDrLZ2+5FdGObUX6VSWGMgw+lDAp3PA1haS97hyBZ";
 		System.out.println(AesAuthUtil.decrypt(decrypt));
 	}
