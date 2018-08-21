@@ -66,6 +66,6 @@ public class FileUploadServlet extends HttpServlet {
 				}
 			}
 		}
-//		response.sendRedirect("download");
+		response.sendRedirect("download");
 	}
 }
