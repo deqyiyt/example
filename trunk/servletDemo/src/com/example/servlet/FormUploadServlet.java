@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.fileupload.FileItem;
 
+import com.example.utils.FileUtils;
 import com.example.utils.MutiFileUpload;
 
 /**
- * 
- * @description TODO(用一句话描述该类做什么)
+ * form表单上传文件方式
  * @date: 2018年8月21日 下午5:14:01
  * @author: jiuzhou.hu
  */
-public class FileUploadServlet extends HttpServlet {
+public class FormUploadServlet extends HttpServlet {
 
 	/**
 	 * 
@@ -39,11 +39,6 @@ public class FileUploadServlet extends HttpServlet {
 		fileUpload.parse(request);
 
 		String folderPath = new File(getServletContext().getRealPath("/")) + "/upload";
-		File filesDir = new File(folderPath);
-		if (!filesDir.exists() && !filesDir.isDirectory()) {
-			System.out.println("目录或文件不存在! 创建目标存放附件文件夹：" + filesDir.getPath());
-			filesDir.mkdir();
-		}
 
 		// 这里是打印非上传组件的值，查看是否能够正常接收
 		// System.out.println( fileUpload.parameters.get("possess") );
@@ -53,7 +48,7 @@ public class FileUploadServlet extends HttpServlet {
 			FileItem item = iterator.next();
 			String fileName = fileUpload.getFileName(item);
 			if (fileName != null && !fileName.equals("")) {
-				File file = new File(folderPath + "/" + fileName);
+				File file = FileUtils.checkExist(folderPath + "/" + fileName);
 
 				try {
 					if (!file.isDirectory()) {
@@ -66,6 +61,6 @@ public class FileUploadServlet extends HttpServlet {
 				}
 			}
 		}
-		response.sendRedirect("download");
+		response.sendRedirect(request.getContextPath() + "/download");
 	}
 }

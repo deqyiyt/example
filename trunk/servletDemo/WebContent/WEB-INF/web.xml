@@ -5,12 +5,21 @@
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<servlet>
-		<servlet-name>fileUploadServlet</servlet-name>
-		<servlet-class>com.example.servlet.FileUploadServlet</servlet-class>
+		<servlet-name>bodyUploadServlet</servlet-name>
+		<servlet-class>com.example.servlet.BodyUploadServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>fileUploadServlet</servlet-name>
-		<url-pattern>/upload</url-pattern>
+		<servlet-name>bodyUploadServlet</servlet-name>
+		<url-pattern>/upload/body</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>formUploadServlet</servlet-name>
+		<servlet-class>com.example.servlet.FormUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>formUploadServlet</servlet-name>
+		<url-pattern>/upload/form</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
